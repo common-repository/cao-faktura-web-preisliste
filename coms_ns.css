@@ -1,0 +1,128 @@
+.comsigno_footerzeile {
+    background: #c1c1c1 !important;
+    padding: 10px;
+    box-shadow: 0 2px 10px 0 rgba(198,203,208,0.3);
+    border-radius: 5px;
+    border: 1px solid #E1E1E1;
+    font-size: 0.8em;
+}
+.comsigno_zeilencontainer {
+    font-size: 0.8em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto 44px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    justify-items: stretch;
+    align-items: start;
+    background: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0 2px 10px 0 rgba(198,203,208,0.3);
+    border-radius: 5px;
+    border: 1px solid #E1E1E1;
+    grid-template-areas:
+    "descr descr descr"
+    "artno einheit price"
+;
+}
+.comsigno_header {
+    background:#c1c1c1 !important; font-weight: 800;
+}
+
+.comsigno_zeilencontainer:nth-child(2n) {background: #e9e9e9}
+
+
+.comsigno_descr {grid-area: descr;}
+.comsigno_artno {grid-area: artno;}
+.comsigno_artno:before {content: 'Artno'; font-weight:600;}
+
+.comsigno_einheit {grid-area: einheit}
+.comsigno_einheit:before {content: 'ME';font-weight:600;}
+
+.comsigno_price {grid-area: price;}
+.comsigno_price:before {content: 'Preis';font-weight:600;}
+
+.comsigno_cs_box {
+    flex: 1 1 auto;    padding: 20px!important;
+    background-color: #ffffff; box-shadow: 0 2px 10px 0 rgba(198,203,208,0.3);
+    border-radius: 5px;    border: 1px solid #E1E1E1;    margin-bottom: 50px;
+    color:#000;
+}
+
+.comsigno_cs_box p {
+    color: #000 !important;
+}
+.comsigno_cs_box a {color: #333;}
+.comsigno_cs_box a:link {
+    text-decoration: none;
+}
+
+.comsigno_nomobile {display: none;}
+.comsigno_footertext {font-size:0.8em; font-weight: 200;color:#555;}
+
+.comsigno_stonecontainer{display: flex; flex-flow: row wrap;align-content: flex-start; flex-direction: row; padding: 50px!important;
+    background-color: #ffffff; box-shadow: 0 2px 10px 0 rgba(198,203,208,0.3);
+    border-radius: 5px;    border: 1px solid #E1E1E1;    margin-bottom: 50px;}
+.comsigno_stoneitem {width:100%; ;padding: 20px!important; background-color: #ffffff; box-shadow: 0 2px 10px 0 rgba(198,203,208,0.3);
+    border-radius: 5px;    border: 1px solid #E1E1E1;    margin: 20px;}
+
+.comsigno_stoneitem>p {
+    color: #000 !important;
+}
+
+@media only screen and (min-width: 600px) {
+    .comsigno_stoneitem {flex-grow:1;width:28%; ;padding: 20px!important; background-color: #ffffff; box-shadow: 0 2px 10px 0 rgba(198,203,208,0.3);
+        border-radius: 5px;    border: 1px solid #E1E1E1;    margin: 20px;}
+
+    .comsigno_nomobile {display: block;}
+
+    .comsigno_artno:before {content: unset;}
+    .comsigno_einheit:before {content: unset;}
+    .comsigno_price:before {content: unset;}
+
+    .comsigno_zeilencontainer {
+        font-size: 0.8em;
+        display: grid;
+        grid-template-columns: 70px auto 50px 80px;
+        grid-template-rows: 1fr;
+        grid-column-gap: 8px;
+        grid-row-gap: 20px;
+        justify-items: stretch;
+        align-items: start;
+        background: #f9f9f9;
+        padding: 10px;
+        grid-template-areas:
+    "artno descr einheit price";
+    }
+
+}
+
+
+@media print  {
+
+    . .comsigno_stoneitem {flex-grow:1;width:28%; ;padding: 20px!important; background-color: #ffffff; box-shadow: 0 2px 10px 0 rgba(198,203,208,0.3);
+        border-radius: 5px;    border: 1px solid #E1E1E1;    margin: 20px;}
+
+    .comsigno_nomobile {display: block;}
+
+    .comsigno_artno:before {content: unset;}
+    .comsigno_einheit:before {content: unset;}
+    .comsigno_price:before {content: unset;}
+
+    .comsigno_zeilencontainer {
+        font-size: 0.8em;
+        display: grid;
+        grid-template-columns: 60px auto 50px 80px;
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        justify-items: stretch;
+        align-items: start;
+        background: #f9f9f9;
+        padding: 10px;
+        grid-template-areas:
+    "artno descr einheit price";
+    }
+
+
+}
